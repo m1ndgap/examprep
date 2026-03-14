@@ -7,8 +7,13 @@ void repeat_alpha(char *str)
 
 	while(str[i])
 	{
-		u = str[i] - 96;
-		while(u >= 0){
+		if (str[i] >= 'a' && str[i] <= 'z')
+			u = str[i] - 'a' + 1;
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+			u = str[i] - 'A' + 1;
+		else 
+			u = 1;			
+		while(u > 0){
 			write(1, &str[i], 1); 
 			u--;
 		}
@@ -19,7 +24,6 @@ void repeat_alpha(char *str)
 int main(int argc, char **argv)
 {
 	if (argc == 2)
-	{
 		repeat_alpha(argv[1]);
-	}
+	write(1, "\n", 1);
 }

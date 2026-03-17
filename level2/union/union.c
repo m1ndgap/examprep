@@ -44,7 +44,7 @@ void unionc (char const *str1, char const *str2){
 
 }
 
-int main(int argc, char const **argv)
+int main(int argc, char **argv)
 {
 	if (argc == 3) {
 		unionc(argv[1], argv[2]);
